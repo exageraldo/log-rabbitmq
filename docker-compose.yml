@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    hostname: rabbitmq
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+    env_file:
+      - .env
+
+volumes:
+  rabbitmq-data:
